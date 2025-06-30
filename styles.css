@@ -1,0 +1,363 @@
+/* Variáveis CSS para melhor manutenibilidade */
+:root {
+  --primary-color: #003366;
+  --secondary-color: #f4f4f4;
+  --text-color: #333;
+  --light-gray: #e6e6e6;
+  --border-color: #999;
+  --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --border-radius: 5px;
+  --spacing-sm: 5px;
+  --spacing-md: 10px;
+  --spacing-lg: 20px;
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 18px;
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: var(--font-size-medium);
+}
+
+.cabecalho {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.cabecalho h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.conteiner {
+  display: flex;
+  max-width: 1200px;
+  margin: var(--spacing-lg) auto;
+  background-color: white;
+  box-shadow: var(--shadow);
+  flex-wrap: wrap; /* Permite quebra em telas menores */
+}
+
+.esquerda {
+  width: 30%;
+  background-color: var(--light-gray);
+  padding: var(--spacing-lg);
+  min-width: 280px; /* Largura mínima para evitar quebra */
+}
+
+.esquerda img {
+  width: 80%;
+  border-radius: var(--border-radius);
+  display: block;
+  margin: 0 auto;
+}
+
+.esquerda h2 {
+  font-size: var(--font-size-large);
+  margin-top: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--spacing-sm);
+  color: var(--primary-color);
+}
+
+.esquerda p,
+.esquerda li {
+  font-size: var(--font-size-small);
+  margin: var(--spacing-sm) 0;
+}
+
+.direita {
+  width: 70%;
+  padding: var(--spacing-lg);
+  flex: 1; /* Permite que o conteúdo se expanda */
+  min-width: 300px; /* Largura mínima */
+}
+
+.direita h2 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-large);
+}
+
+.resumo,
+.experiencia,
+.formacao {
+  margin-bottom: var(--spacing-lg);
+}
+
+.resumo h2,
+.experiencia h2,
+.formacao h2 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-large);
+}
+
+ul {
+  padding-left: var(--spacing-lg);
+}
+
+li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.barra-idioma {
+  background-color: #ddd; /* Melhor contraste */
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: var(--spacing-sm);
+  height: 12px; /* Altura fixa para melhor visualização */
+}
+
+.barra-idioma span {
+  display: block;
+  height: 100%;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease; /* Animação suave */
+}
+
+/* Melhorias de acessibilidade */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .conteiner {
+    flex-direction: column;
+    margin: var(--spacing-md);
+  }
+
+  .esquerda,
+  .direita {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .esquerda {
+    order: 2; /* Coloca informações de contato no final em mobile */
+  }
+
+  .direita {
+    order: 1; /* Conteúdo principal primeiro */
+  }
+
+  .cabecalho h1 {
+    font-size: 1.5rem;
+  }
+
+  body {
+    font-size: var(--font-size-small);
+  }
+
+  .esquerda p,
+  .esquerda li {
+    font-size: var(--font-size-medium);
+  }
+}
+
+@media (max-width: 480px) {
+  .cabecalho {
+    padding: var(--spacing-md);
+  }
+
+  .esquerda,
+  .direita {
+    padding: var(--spacing-md);
+  }
+
+  .cabecalho h1 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Melhorias visuais */
+.resumo p,
+.experiencia p,
+.formacao p {
+  margin-bottom: var(--spacing-md);
+}
+
+strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Classes para níveis de idioma */
+.nivel-90 {
+  width: 90%;
+}
+
+.nivel-60 {
+  width: 60%;
+}
+
+/* Estilos para novos elementos semânticos */
+.profissao {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.foto-perfil {
+  margin: 0 0 var(--spacing-lg) 0;
+  text-align: center;
+}
+
+.foto-perfil img {
+  border: 3px solid var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.foto-perfil img:hover {
+  transform: scale(1.05);
+}
+
+.contato address {
+  font-style: normal;
+}
+
+.contato a {
+  display: block;
+  padding: var(--spacing-sm) 0;
+  transition: color 0.3s ease;
+}
+
+.contato a:hover {
+  color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+.item-idioma {
+  margin-bottom: var(--spacing-md);
+}
+
+.nivel-lingua {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.trabalho header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.trabalho h3 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.trabalho time {
+  color: var(--text-color);
+  opacity: 0.8;
+  font-size: var(--font-size-small);
+}
+
+.atual {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.empresa,
+.instituicao {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-medium);
+}
+
+.diploma header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.diploma h3 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.rodape {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background-color: var(--primary-color);
+  color: white;
+  margin-top: var(--spacing-lg);
+}
+
+.rodape p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Melhorias de acessibilidade para barras de progresso */
+.barra-idioma:focus-within {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Melhorias para impressão */
+@media print {
+  .cabecalho {
+    background-color: var(--primary-color) !important;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  .rodape {
+    background-color: var(--primary-color) !important;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  .barra-idioma span {
+    background-color: var(--primary-color) !important;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  .conteiner {
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .esquerda,
+  .direita {
+    width: 100%;
+    min-width: auto;
+  }
+}
