@@ -350,5 +350,11 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 ⭐ **Se este projeto foi útil, considere dar uma estrela!**
 
 **Desenvolvido com ❤️ seguindo as melhores práticas de desenvolvimento web moderno.**
-#   c u r r i c u l o  
+#
+
+⭐ **Se este projeto foi útil, considere dar uma estrela!**
+
+**Desenvolvido com ❤️ seguindo as melhores práticas de desenvolvimento web moderno.**
+#   c u r r i c u l o 
+ 
  
