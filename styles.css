@@ -361,3 +361,25 @@ strong {
     min-width: auto;
   }
 }
+
+/* Foto de perfil no topo do cabeçalho */
+.cabecalho .foto-perfil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+.cabecalho .foto-perfil img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+/* Remove centralização da foto de perfil na sidebar */
+.esquerda .foto-perfil,
+.esquerda .foto-perfil img {
+  display: none;
+}
